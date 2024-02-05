@@ -12,9 +12,11 @@ public class TicketController : BaseController
     public async Task<ActionResult<bool>> SendTicket([FromBody]SendTicketCommand command,CancellationToken cancellationToken)
         => await Mediator.Send(command, cancellationToken);
     [HttpPut]
+    [Route("Confirm/{id?}")]
     public async Task<ActionResult<bool>> EditTicket([FromBody]EditTicketCommand command,CancellationToken cancellationToken)
         => await Mediator.Send(command,cancellationToken);
     [HttpDelete]
+    [Route("Confirm/{id?}")]
     public async Task<ActionResult<bool>> DeleteTicket([FromBody]DeleteTicketCommand command, CancellationToken cancellationToken)
     => await Mediator.Send(command, cancellationToken);
 
