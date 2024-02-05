@@ -24,7 +24,7 @@ public class CategoryController : BaseAdminController
         => await Mediator.Send(command, cancellationToken);
     [Authorize]
     [HttpGet]
-    public async Task<ICollection<TicketCategoryDTO>> GetCategory([FromBody] GetAllCategoryQuery query, CancellationToken cancellationToken)
+    public async Task<ICollection<TicketCategoryDTO>> GetCategory([FromQuery] GetAllCategoryQuery query, CancellationToken cancellationToken)
     => await Mediator.Send(query, cancellationToken);
 }
 
