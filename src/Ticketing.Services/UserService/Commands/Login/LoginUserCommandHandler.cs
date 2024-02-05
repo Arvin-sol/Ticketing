@@ -2,7 +2,7 @@
 using Ticketing.Data.Interfaces.IRepositories;
 
 namespace Ticketing.Services.UserService.Commands.Login;
-public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, bool>
+public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, string>
 {
     #region DI
     private readonly IUserRepository _userRepository;
@@ -13,13 +13,16 @@ public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, bool>
         _jwtProvider = jwtProvider;
     }
     #endregion
-    public async Task<bool> Handle(LoginUserCommand request, CancellationToken cancellationToken)
+    public async Task<string> Handle(LoginUserCommand request, CancellationToken cancellationToken)
     {
         var getUser =  await _userRepository.FindByEmail(request.email);
         if (getUser == null)
-            return false;
-        _jwtProvider.Generate(getUser);
-        return BCrypt.Net.BCrypt.Verify(request.password, getUser.Password);
+            return "User Not Found";
+        string token =  _jwtProvider.Generate(getUser);
+        bool resualt =  BCrypt.Net.BCrypt.Verify(request.password, getUser.Password);
+        if (resualt)
+            return token;
+        return default;
     }
 }
 

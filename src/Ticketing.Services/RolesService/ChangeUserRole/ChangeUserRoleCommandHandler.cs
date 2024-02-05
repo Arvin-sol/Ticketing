@@ -23,6 +23,7 @@ public class ChangeUserRoleCommandHandler : IRequestHandler<ChangeUserRoleComman
     {
         var getUserRole =  await _userSelected.GetByUserIdAsync(request.UserId);
         getUserRole.RoleId = request.RoleId;
+        getUserRole.UpdateDate = DateTime.Now;
         return await _uow.SaveChangesAsync();
     }
 }

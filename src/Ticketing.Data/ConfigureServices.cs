@@ -23,6 +23,7 @@ public static class ConfigureServices
         services.AddScoped<IJwtProvider, JwtProvider>();
         services.AddScoped<ITicketCategoryRepository, TicketCategoryRepository>();
         services.AddScoped<ITicketMessegeRepository, TicketMessegeRepository>();
+        services.AddScoped<ITokenValidator, TokenValidator>();
 
         return services;
     }

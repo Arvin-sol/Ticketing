@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using Ticketing.Data.Entities;
+using Ticketing.Data.Entities.UserEntities;
 using Ticketing.Data.Interfaces.IRepositories;
 
 namespace Ticketing.Data.Implementations.Repositories;

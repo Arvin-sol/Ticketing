@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ticketing.Data.Interfaces.IRepositories;
-using Ticketing.Services.DTOs;
+using Ticketing.Data.DTOs;
 
 namespace Ticketing.Services.RolesService.GetAllRols;
 public class GetAllRolesQueryHandler : IRequestHandler<GetAllRolesQuery, ICollection<RoleDTO>>

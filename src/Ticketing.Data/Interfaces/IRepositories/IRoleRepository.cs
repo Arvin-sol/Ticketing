@@ -1,4 +1,4 @@
-﻿using Ticketing.Data.Entities;
+﻿using Ticketing.Data.Entities.UserEntities;
 
 namespace Ticketing.Data.Interfaces.IRepositories;
 public interface IRoleRepository

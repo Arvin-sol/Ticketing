@@ -1,5 +1,4 @@
-﻿
-using Ticketing.Data.Entities;
+﻿using Ticketing.Data.Entities.TicketingEntities;
 using Ticketing.Data.Interfaces;
 using Ticketing.Data.Interfaces.IRepositories;
 
@@ -22,7 +21,8 @@ public class SendTicketCommandHandler : IRequestHandler<SendTicketCommand, bool>
         { 
             CategoryId = request.category,
             SenderId = request.sender,
-            Message = request.messege 
+            Message = request.messege,
+            Status = 0
         };
         var sendMessage = await _ticketRepository.CreateAsync(newMessege);
         if (sendMessage)

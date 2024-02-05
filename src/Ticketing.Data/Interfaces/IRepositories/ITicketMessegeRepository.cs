@@ -1,6 +1,5 @@
-﻿
-
-using Ticketing.Data.Entities;
+﻿using Ticketing.Data.DTOs;
+using Ticketing.Data.Entities.TicketingEntities;
 
 namespace Ticketing.Data.Interfaces.IRepositories;
 public interface ITicketMessegeRepository
@@ -10,5 +9,6 @@ public interface ITicketMessegeRepository
     Task<bool> CreateAsync(TicketMessege model);
     bool Update(TicketMessege model);
     bool Delete(TicketMessege model);
+    Task<List<TicketMessegeDTO>> FillTicketMessegeDTO(CancellationToken token);
 }
 

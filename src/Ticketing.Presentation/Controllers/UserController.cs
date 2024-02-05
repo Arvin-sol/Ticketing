@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Ticketing.Services.DTOs;
+using Ticketing.Data.DTOs;
 using Ticketing.Services.UserService.Commands.Create;
 using Ticketing.Services.UserService.Commands.Delete;
 using Ticketing.Services.UserService.Commands.Login;
@@ -13,18 +13,17 @@ public class UserController : BaseController
     public async Task<ActionResult<bool>> Register([FromBody] CreateUserCommand command,CancellationToken cancellationToken)
         => await Mediator.Send(command, cancellationToken);
     [HttpPost]
-    public async Task<ActionResult<bool>> Login([FromBody]LoginUserCommand command,CancellationToken cancellationToken)
+    public async Task<ActionResult<string>> Login([FromBody]LoginUserCommand command,CancellationToken cancellationToken)
         => await Mediator.Send(command, cancellationToken);
     [HttpGet]
     public async Task<ICollection<UserDTO>> GetAllUsers([FromQuery] GetAllUserQuery query, CancellationToken cancellationToken)
         => await Mediator.Send(query, cancellationToken);
 
-    [HttpPost]
+    [HttpPut]
     [Route("Confirm/{id?}")]
     public async Task<ActionResult<bool>> UpdateUserInformation([FromBody] UpdateUserCommand command, CancellationToken cancellationToken)
-    {
-        return await Mediator.Send(command, cancellationToken);
-    }
+        => await Mediator.Send(command, cancellationToken);
+    
     [HttpDelete]
     [Route("Confirm/{id?}")]
     public async Task<bool> DeleteUser(Guid id)

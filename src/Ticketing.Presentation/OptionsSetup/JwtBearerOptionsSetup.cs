@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Ticketing.Data.Entities;
+using Ticketing.Data.Interfaces;
 
 namespace Ticketing.Presentation.OptionsSetup;
 public class JwtBearerOptionsSetup : IConfigureOptions<JwtBearerOptions>
@@ -23,6 +24,16 @@ public class JwtBearerOptionsSetup : IConfigureOptions<JwtBearerOptions>
             ValidIssuer = _jwtOptions.Issuer,
             ValidAudience = _jwtOptions.Audience,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SecretKey))
+        };
+        options.SaveToken = true;
+        options.Events = new JwtBearerEvents
+        {
+            OnTokenValidated = context =>
+            {
+                var tokenValidatorService = context.HttpContext.RequestServices.GetRequiredService<ITokenValidator>();
+                return tokenValidatorService.Execute(context);
+            }
+
         };
     }
 }

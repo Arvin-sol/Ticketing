@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Ticketing.Data.Common;
-using Ticketing.Data.Entities;
+using Ticketing.Data.Entities.UserEntities;
 
 namespace Ticketing.Data.Interfaces.IRepositories;
 public interface IUserRepository

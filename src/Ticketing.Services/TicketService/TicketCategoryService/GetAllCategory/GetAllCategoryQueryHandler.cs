@@ -1,7 +1,7 @@
 ﻿
 using Ticketing.Data.Interfaces.IRepositories;
 using Ticketing.Data.Interfaces;
-using Ticketing.Services.DTOs;
+using Ticketing.Data.DTOs;
 
 namespace Ticketing.Services.TicketService.TicketCategoryService.GetAllCategory;
 public class GetAllCategoryQueryHandler : IRequestHandler<GetAllCategoryQuery, ICollection<TicketCategoryDTO>>

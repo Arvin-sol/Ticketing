@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Data.Entities;
+﻿namespace Ticketing.Data.Entities.UserEntities;
 public class UserSelectedRols : BaseEntity, IEntity
 {
     public Guid UserId { get; set; }

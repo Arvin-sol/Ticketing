@@ -1,6 +1,6 @@
-﻿
-using Ticketing.Data.Entities;
-using Ticketing.Services.DTOs;
+﻿using Ticketing.Data.Entities.TicketingEntities;
+using Ticketing.Data.Entities.UserEntities;
+using Ticketing.Data.DTOs;
 
 namespace Ticketing.Services.Common;
 public static class CustomMapper

@@ -1,7 +1,8 @@
 ﻿using Ticketing.Data.Interfaces;
 using BCrypt.Net;
 using Ticketing.Data.Interfaces.IRepositories;
-using Ticketing.Data.Entities;
+using Ticketing.Data.Entities.UserEntities;
+using Microsoft.AspNetCore.Mvc.Routing;
 
 namespace Ticketing.Services.UserService.Commands.Create;
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, bool>
@@ -28,7 +29,8 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, bool>
             Name = request.Name,
             Email = request.Email,
             LastName = request.LastName,
-            Password = hashPassword
+            Password = hashPassword,
+
         };
 
         var createNewUser = await _userRepository.CreateAsync(NewUser);

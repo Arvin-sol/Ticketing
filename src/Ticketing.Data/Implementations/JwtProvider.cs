@@ -5,6 +5,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Ticketing.Data.Entities;
+using Ticketing.Data.Entities.UserEntities;
 using Ticketing.Data.Interfaces;
 
 namespace Ticketing.Data.Implementations;

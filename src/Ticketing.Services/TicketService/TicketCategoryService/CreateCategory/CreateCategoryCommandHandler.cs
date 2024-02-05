@@ -1,6 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Http.Features;
-using Ticketing.Data.Entities;
+using Ticketing.Data.Entities.TicketingEntities;
 using Ticketing.Data.Interfaces;
 using Ticketing.Data.Interfaces.IRepositories;
 

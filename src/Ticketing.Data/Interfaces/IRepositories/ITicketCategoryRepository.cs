@@ -1,4 +1,4 @@
-﻿using Ticketing.Data.Entities;
+﻿using Ticketing.Data.Entities.TicketingEntities;
 
 namespace Ticketing.Data.Interfaces.IRepositories;
 public interface ITicketCategoryRepository

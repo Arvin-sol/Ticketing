@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ticketing.Data.Interfaces.IRepositories;
-using Ticketing.Services.DTOs;
+using Ticketing.Data.DTOs;
 
 namespace Ticketing.Services.UserService.Queries.GetAllUsers;
 internal class GetAllUserQueryHandler : IRequestHandler<GetAllUserQuery, ICollection<UserDTO>>

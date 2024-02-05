@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using Ticketing.Data.Entities;
+using Ticketing.Data.Entities.TicketingEntities;
+using Ticketing.Data.Entities.UserEntities;
 
 namespace Ticketing.Data.Common;
 public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 

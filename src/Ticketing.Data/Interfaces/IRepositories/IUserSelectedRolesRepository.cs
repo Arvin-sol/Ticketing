@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ticketing.Data.Entities;
+using Ticketing.Data.Entities.UserEntities;
 
 namespace Ticketing.Data.Interfaces.IRepositories;
 public interface IUserSelectedRolesRepository

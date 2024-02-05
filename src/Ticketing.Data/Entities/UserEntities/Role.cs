@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Data.Entities;
+﻿namespace Ticketing.Data.Entities.UserEntities;
 public class Role : BaseEntity, IEntity
 {
     public string UniqRoleTitle { get; set; }
