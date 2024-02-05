@@ -22,7 +22,7 @@ public class TicketAdminController : BaseAdminController
     [Authorize]
     [HttpDelete]
     public async Task<ActionResult<bool>> DeleteTicket([FromBody]DeleteTicketCommand command, CancellationToken cancellationToken)
-        => await Mediator.Send(command, cancellationToken);
+        =>await Mediator.Send(command, cancellationToken);
     [Authorize]
     [HttpPost]
     public async Task<ActionResult<bool>> CloseTicket([FromBody]CloseTicketCommand command, CancellationToken cancellationToken)

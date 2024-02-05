@@ -35,15 +35,8 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, bool>
 
         var createNewUser = await _userRepository.CreateAsync(NewUser);
         if (createNewUser)
-        {
-            _jwtProvider.Generate(NewUser);
             return await _uow.SaveChangesAsync();
-
-        }
-
         return false;
-
-
     }
 }
 
