@@ -16,6 +16,8 @@ public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> 
     public DbSet<User> users { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<UserSelectedRols> UserSelectedRols { get; set;}
+    public DbSet<TicketCategory> TicketCategories { get; set; }
+    public DbSet<TicketMessege> TicketMesseges { get; set; }
 
 }
 

@@ -1,6 +1,5 @@
-﻿
-namespace Ticketing.Data.Entities;
-public class User :BaseEntity,IEntity
+﻿namespace Ticketing.Data.Entities;
+public class User : BaseEntity, IEntity
 {
     public string Name { get; set; }
     public string LastName { get; set; }

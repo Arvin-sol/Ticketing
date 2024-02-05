@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ticketing.Services.UserService.Commands.Delete;
-public record DeleteUserCommand(Guid Id) 
-    : IRequest<bool>;
+public class DeleteUserCommand
+    : IRequest<bool>
+{
+    public Guid Id { get; set; }
+}
 
 

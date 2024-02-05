@@ -2,7 +2,6 @@
 
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Ticketing.Data.Entities;
-
 namespace Ticketing.Data.Configurations;
 public class RoleConfig : IEntityTypeConfiguration<Role>
 {

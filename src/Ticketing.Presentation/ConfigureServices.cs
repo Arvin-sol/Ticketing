@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Ticketing.Presentation.Filter;
 using Ticketing.Presentation.OptionsSetup;
 
 namespace Ticketing.Presentation;
@@ -17,5 +18,6 @@ public static class ConfigureServices
 
         return services;
     }
+
 }
 

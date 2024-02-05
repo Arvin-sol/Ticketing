@@ -1,5 +1,4 @@
-﻿
-using Ticketing.Data.Entities;
+﻿using Ticketing.Data.Entities;
 using Ticketing.Data.Interfaces.IRepositories;
 
 namespace Ticketing.Data.Implementations.Repositories;

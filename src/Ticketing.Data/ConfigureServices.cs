@@ -21,6 +21,8 @@ public static class ConfigureServices
         services.AddScoped<IRoleRepository, RoleRepository>();
         services.AddScoped<IUserSelectedRolesRepository, UserSelectedRolesRepository>();
         services.AddScoped<IJwtProvider, JwtProvider>();
+        services.AddScoped<ITicketCategoryRepository, TicketCategoryRepository>();
+        services.AddScoped<ITicketMessegeRepository, TicketMessegeRepository>();
 
         return services;
     }

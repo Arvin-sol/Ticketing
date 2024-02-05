@@ -1,6 +1,5 @@
-﻿
-namespace Ticketing.Data.Entities;
-public class UserSelectedRols:BaseEntity ,IEntity
+﻿namespace Ticketing.Data.Entities;
+public class UserSelectedRols : BaseEntity, IEntity
 {
     public Guid UserId { get; set; }
     public Guid RoleId { get; set; }
