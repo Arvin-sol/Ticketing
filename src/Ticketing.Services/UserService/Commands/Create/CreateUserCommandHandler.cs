@@ -30,7 +30,6 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, bool>
             Email = request.Email,
             LastName = request.LastName,
             Password = hashPassword,
-
         };
 
         var createNewUser = await _userRepository.CreateAsync(NewUser);

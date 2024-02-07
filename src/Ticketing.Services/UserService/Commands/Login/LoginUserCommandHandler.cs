@@ -18,10 +18,13 @@ public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, string>
         var getUser =  await _userRepository.FindByEmail(request.email);
         if (getUser == null)
             return "User Not Found";
-        string token =  _jwtProvider.Generate(getUser);
-        bool resualt =  BCrypt.Net.BCrypt.Verify(request.password, getUser.Password);
+       
+        bool resualt =  BCrypt.Net.BCrypt.Verify(request.password, getUser.Password); 
         if (resualt)
+        {
+            string token =  _jwtProvider.Generate(getUser);
             return token;
+        }
         return default;
     }
 }

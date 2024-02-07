@@ -9,8 +9,8 @@ using Ticketing.Data.Enums;
 namespace Ticketing.Data.DTOs;
 public class TicketMessegeDTO
 {
-    public string message { get; set; }
-    public string senderName { get; set; }
-    public string CategoryTitle { get; set; }
-    public ReadOrClosedTicketEnum Status { get; set; }
+    public string message { get; init; }
+    public string senderName { get; init; }
+    public string CategoryTitle { get; init; }
+    public ReadOrClosedTicketEnum Status { get; init; }
 }

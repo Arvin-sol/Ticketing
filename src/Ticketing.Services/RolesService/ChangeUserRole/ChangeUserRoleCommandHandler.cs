@@ -12,13 +12,13 @@ public class ChangeUserRoleCommandHandler : IRequestHandler<ChangeUserRoleComman
     #region DI
     private readonly IUserSelectedRolesRepository _userSelected;
     private readonly IApplicationUnitOfWork _uow;
-    #endregion
     public ChangeUserRoleCommandHandler(IUserSelectedRolesRepository userSelected , IApplicationUnitOfWork uow)
     {
         _userSelected = userSelected;
         _uow = uow;
     }
-    
+        #endregion
+
     public async Task<bool> Handle(ChangeUserRoleCommand request, CancellationToken cancellationToken)
     {
         var getUserRole =  await _userSelected.GetByUserIdAsync(request.UserId);
